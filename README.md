@@ -111,16 +111,8 @@ chmod +x run.sh
 ### Opsi B — Dari File Archive (.tar.gz)
 
 ```bash
-# 1. Clone repository
-git clone https://github.com/15K4R10T/SQLI-Machine-CyberRange-IDN.git
-
-# 2. Extract archive
-tar -xzf SQLI-Machine-CyberRange-IDN/lab-sqli-single.tar.gz
-
-# 3. Masuk ke folder & jalankan
-cd lab-sqli-single
-chmod +x run.sh
-./run.sh
+docker load < lab-sqli-image.tar.gz
+docker run -d --name lab-sqli -p 8080:80 --restart unless-stopped lab-sqli
 ```
 
 ---
